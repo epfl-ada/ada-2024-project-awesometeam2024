@@ -4,4 +4,3 @@ sentencepiece==0.2.0
 scipy==1.13.0
 matplotlib==3.8.4
 wandb==0.17.2
-numpy== ...
