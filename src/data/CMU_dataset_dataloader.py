@@ -13,21 +13,20 @@ class MoviesSummaryDataset(Dataset):
 
     def __init__(self, data_dir, filename, categories):
         super().__init__()
-
         if not path.isdir(data_dir):
             raise ValueError(f"The directory {data_dir} does not exist.")
-        if not path.isfile(path.join(data_dir, filename)):
+        if not path.isfile(path.join(data_dir, 'plain', filename)):
             raise ValueError(f"The file {filename} does not exist in the directory {data_dir}.")
         
         self.filename = filename
         self.categories = categories
 
-        binary_file_path = path.join(data_dir, 'initial', 'bin', f"{filename}.pkl")
+        binary_file_path = path.join(data_dir, 'bin', f"{filename}.pkl")
         if path.isfile(binary_file_path):
             with open(binary_file_path, 'rb') as f:
                 self.data = pickle.load(f)
         else:
-            self.data = pd.read_csv(path.join(data_dir, 'initial', 'plain', filename), sep='\t', header=None, names=categories)
+            self.data = pd.read_csv(path.join(data_dir, 'plain', filename), sep='\t', header=None, names=categories)
             with open(binary_file_path, 'wb') as f:
                 pickle.dump(self.data, f)
 
