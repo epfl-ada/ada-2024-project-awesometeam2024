@@ -1,7 +1,27 @@
 
 # Your project name
-This is a template repo for your project to help you organise and document your code better. 
-Please use this structure for your project and document the installation, usage and structure as below.
+
+## Abstract
+This study aims to investigate factors such as genre, runtime, release date, and language to understand their influence on box office revenue, thus identifying the most common predictors of a film’s financial success: Do action films generate more revenue than dramas? Does a film’s runtime have an impact on its financial performance? Do films released in the summer or during holidays outperform films released at any other time? 
+This analysis uses machine learning models, such as linear regression, in order to create a predictive model for box office success based on historical data. This allows to discover the correlation between the film attributes (e.g. genre) and the revenue. It also enables the prediction of new film’s box office revenue based on the attributes. By comparing this prediction with the actual box office outcome, one can find out the the key factors that influence financial success in the film industry.
+
+<span style="color:yellow">"You can make this approach broader to answer more questions beyond only training a predictive a model". 
+Ideas: attribute recomendations? Like, given the genre and some other attributes, recommend a season for example</span>.
+
+## Research Questions
+
+## Proposed additional datasets
+<span style="color:yellow">Explore each one better</span>
+[https://www.kaggle.com/datasets/utkarshx27/movies-dataset/suggestions?status=pending&yourSuggestions=true]
+[https://www.boxofficemojo.com/release/rl3290006273/?ref_=bo_hm_rd]
+[https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata/code]
+
+
+## Methods
+
+## Proposed timeline
+
+## Organization within the team
 
 ## Quickstart
 
