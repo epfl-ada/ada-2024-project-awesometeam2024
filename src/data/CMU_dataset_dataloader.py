@@ -1,4 +1,5 @@
 from os import path
+import os
 import pickle
 import pandas as pd
 import torch
@@ -27,6 +28,7 @@ class MoviesSummaryDataset(Dataset):
                 self.data = pickle.load(f)
         else:
             self.data = pd.read_csv(path.join(data_dir, 'plain', filename), sep='\t', header=None, names=categories)
+            os.makedirs(os.path.dirname(binary_file_path), exist_ok=True)
             with open(binary_file_path, 'wb') as f:
                 pickle.dump(self.data, f)
 
