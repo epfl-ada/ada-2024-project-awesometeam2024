@@ -36,7 +36,6 @@ Comparing the actual and predicted box office results, it could provide insight 
 ## Proposed additional datasets
 <span style="color:yellow">Explore each one better</span>
 [https://www.kaggle.com/datasets/utkarshx27/movies-dataset/suggestions?status=pending&yourSuggestions=true]
-[https://www.boxofficemojo.com/release/rl3290006273/?ref_=bo_hm_rd]
 [https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata/code]
 
 
