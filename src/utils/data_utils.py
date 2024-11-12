@@ -33,3 +33,24 @@ def categorize_release_season(date):
         return 'Holiday'
     else:
         return 'Other'
+    
+def categorize_age_group(age):
+    """
+    Categorize a release date into one of the following categories: Spring, Summer, Holiday, or Other.
+    Args:
+        date (datetime): The release date of a movie.
+        
+    Returns:
+        str: The category of the release date.
+    """
+    if 0 <= age < 13:
+        return 'child'
+    elif age < 18:
+        return 'teen'
+    elif age < 35:
+        return 'young_adult'
+    elif age < 65:
+        return 'adult'
+    else:
+        return 'senior'
+    
