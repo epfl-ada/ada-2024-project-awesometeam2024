@@ -27,6 +27,7 @@ The questions are organized as milestones to guide our analysis, helping us syst
 **Questions : find correlation**
 - Does the film language influences revenue in a specific country 
 - Does some sountries prefer a specific genre ?
+- How does these features have evolved over time ?
 - TODO find more
 
 **Output model** \
