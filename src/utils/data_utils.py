@@ -20,10 +20,50 @@ def convert_to_dict(dict_str):
     except json.JSONDecodeError as e:
         return {} 
     
+def create_genre_list(data_str):
+    data = convert_to_dict(data_str)
+    if not isinstance(data, dict):
+        return data
+    
+    data = list(data.values())
+
+    new_data = []
+    
+    for genre in data:
+        genre = genre.lower()\
+            .replace('romantic', 'romance')\
+            .replace('sci-fi', 'science-fiction')\
+            .replace('science fiction', 'science-fiction')\
+            .replace('comedy-drama', 'comedy drama')\
+            .replace('period piece', 'period_piece')\
+            .replace('computer animation', 'computer_animation')\
+            .replace('glamorized spy', 'glamorized_spy')\
+            .replace('time travel', 'time_travel')\
+            .replace(' of ', '_of_')\
+            .replace(' and ', '_and_')\
+            .replace(' cinema', '')\
+            .replace(' films', '')\
+            .replace(' film', '')\
+            .replace('film ', '')\
+            .replace(' movies', '')\
+            .replace(' movie', '')\
+            .replace('/', ' ')
+        new_genre = genre.split()
+
+        # Add genre and its variations
+        new_data += [genre]
+        if len(new_genre) > 1:
+            new_data += new_genre
+
+    # Remove duplicates
+    new_data = list(set(new_data))
+
+    return new_data
+    
 def create_ethnicity_list(data_str):
     if not data_str:
         return []
-    new = data_str\
+    new = data_str.lower()\
         .replace('ans', 'an')\
         .replace('people', '')\
         .replace('peoples', '')\
@@ -34,12 +74,13 @@ def create_ethnicity_list(data_str):
         .replace(' and', '')\
         .replace(' in', '')\
         .replace(' to', '')\
-        .replace('United States', 'United_States')\
-        .replace('United Kingdom', 'United_Kingdom')\
-        .replace('Puerto Rican', 'Puerto_Rican')\
-        .replace('Afro', 'African')\
-        .replace('Afro-', 'African ')\
-        .replace('South African', 'South_African')
+        .replace('united states', 'united_states')\
+        .replace('united kingdom', 'united_kingdom')\
+        .replace('puerto rican', 'puerto_rican')\
+        .replace('afro', 'african')\
+        .replace('afro-', 'african ')\
+        .replace('south african', 'south_african')\
+        .replace('african-american', 'african american')
     return new.split()
         
 
