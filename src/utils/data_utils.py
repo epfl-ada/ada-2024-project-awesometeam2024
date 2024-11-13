@@ -83,10 +83,7 @@ def create_genre_list(data_str):
             .replace('/', ' ')
         new_genre = genre.split()
 
-        # Add genre and its variations
-        new_data += [genre]
-        if len(new_genre) > 1:
-            new_data += new_genre
+        new_data += new_genre
 
     # Remove duplicates
     new_data = list(set(new_data))
