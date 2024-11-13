@@ -29,7 +29,6 @@ The questions are organized as milestones to guide our analysis, helping us syst
 - Which languages perform better outside of where they are spoken?
 - How box office revenues changed in critical world situations (pandemic, economic crisis)?
 - How does these features have evolved over time?
-- TODO find more
 
 **Output model** \
 Gathering answers from the previous question, this helps us choosing one model for predicting box office revenue. Neverthe less, we still have to choose the best one.
