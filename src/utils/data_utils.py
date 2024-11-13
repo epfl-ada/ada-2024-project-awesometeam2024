@@ -1,6 +1,5 @@
 import json
 from SPARQLWrapper import SPARQLWrapper, JSON
-import pandas as pd
 
 def convert_to_dict(dict_str):
     """
@@ -20,6 +19,39 @@ def convert_to_dict(dict_str):
     except json.JSONDecodeError as e:
         return {} 
     
+    
+def get_name_from_freebase_id(freebase_id):
+    if not freebase_id:
+        return None
+    
+    # Create a SPARQL wrapper object
+    sparql = SPARQLWrapper("https://query.wikidata.org/bigdata/namespace/wdq/sparql", agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11")
+
+    # Set the query
+    sparql.setQuery(f"""
+        SELECT ?item ?itemLabel WHERE {{
+        ?item wdt:P646 "{freebase_id}".
+        SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
+        }}
+    """)
+    
+    # Set the return format
+    sparql.setReturnFormat(JSON)
+    
+    try:
+        # Execute the query and parse the results
+        results = sparql.query().convert()
+        if results["results"]["bindings"]:
+            item_name = results["results"]["bindings"][0]["itemLabel"]["value"]
+            # Return the name of the item
+            return item_name
+        else:
+            return None
+    except Exception as e:
+        print(f"Error while consulting Freebase ID {freebase_id}: {e}")
+        return None
+    
+    
 def create_genre_list(data_str):
     data = convert_to_dict(data_str)
     if not isinstance(data, dict):
@@ -30,6 +62,7 @@ def create_genre_list(data_str):
     new_data = []
     
     for genre in data:
+        # Standardize genre names
         genre = genre.lower()\
             .replace('romantic', 'romance')\
             .replace('sci-fi', 'science-fiction')\
@@ -59,10 +92,12 @@ def create_genre_list(data_str):
     new_data = list(set(new_data))
 
     return new_data
+
     
 def create_ethnicity_list(data_str):
     if not data_str:
         return []
+    # Standardize ethnicity names
     new = data_str.lower()\
         .replace('ans', 'an')\
         .replace('people', '')\
@@ -81,9 +116,10 @@ def create_ethnicity_list(data_str):
         .replace('afro-', 'african ')\
         .replace('south african', 'south_african')\
         .replace('african-american', 'african american')
+    
+    # Split the string into a list of ethnicity names
     return new.split()
         
-
     
 def categorize_release_season(date):
     """
@@ -122,32 +158,3 @@ def categorize_age_group(age):
         return 'adult'
     else:
         return 'senior'
-    
-def get_name_from_freebase_id(freebase_id):
-    if not freebase_id:
-        return None
-    
-    sparql = SPARQLWrapper("https://query.wikidata.org/bigdata/namespace/wdq/sparql", agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11")
-
-    
-    sparql.setQuery(f"""
-        SELECT ?item ?itemLabel WHERE {{
-        ?item wdt:P646 "{freebase_id}".
-        SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
-        }}
-    """)
-    
-    sparql.setReturnFormat(JSON)
-    
-    try:
-        results = sparql.query().convert()
-        # results_df = pd.io.json.json_normalize(results['results']['bindings'])
-        # print(results_df[['item.value', 'itemLabel.value']].head(1))
-        if results["results"]["bindings"]:
-            item_name = results["results"]["bindings"][0]["itemLabel"]["value"]
-            return item_name
-        else:
-            return None
-    except Exception as e:
-        print(f"Error while consulting Freebase ID {freebase_id}: {e}")
-        return None
