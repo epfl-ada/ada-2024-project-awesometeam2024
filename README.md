@@ -20,14 +20,15 @@ The questions are organized as milestones to guide our analysis, helping us syst
 **Questions : understanding individual features**
 - What types of films generate the most revenue?
 - Does a film’s runtime have an impact on its financial performance? 
-- What periode is better for a movie release ? (eg. summer, holiday, others)
-- Does ethnicity, age or gender of leading actors influences box office revenue ?
-- How runtime affects revenue ?
+- What period is better for a movie release ? (eg. summer, holiday, others)
+- Does ethnicity, age or gender of leading actors influences box office revenue?
 
 **Questions : find correlation**
-- Does the film language influences revenue in a specific country 
-- Does some sountries prefer a specific genre ?
-- How does these features have evolved over time ?
+- Does the film language influences revenue in a specific country?
+- Does some countries prefer a specific genre?
+- Which languages perform better outside of where they are spoken?
+- How box office revenues changed in critical world situations (pandemic, economic crisis)?
+- How does these features have evolved over time?
 - TODO find more
 
 **Output model** \
