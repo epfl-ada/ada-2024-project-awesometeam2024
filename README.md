@@ -85,7 +85,7 @@ We organized oursleves with one leader for each task/step of the project and at 
 - **Andrea** : Step 3
 - **Ines** : Step 6 and 7
 - **Vasco** : Step 4
-- **Amed** : Step 5
+- **Ahmed** : Step 5
 - **Nicolas** : Step 1 and 2
 
 ## Quickstart
