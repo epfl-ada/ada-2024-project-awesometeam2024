@@ -50,24 +50,19 @@ class MoviesSummaryDataset(Dataset):
         sample = self.data.iloc[idx]
         return sample
     
-    def save_data(self, save_dir, save_as_binary=True):
+    def save_data(self, save_dir):
         """
         Save the dataset to a specified directory either as a binary file or as a CSV file.
 
         Args:
             save_dir (str): The directory where the data should be saved.
-            save_as_binary (bool): If True, save as a binary file; otherwise, save as a CSV file.
         """
         if not path.isdir(save_dir):
             raise ValueError(f"The directory {save_dir} does not exist.")
         
-        if save_as_binary:
-            binary_file_path = path.join(save_dir, f'{self.filename}.pkl')
-            with open(binary_file_path, 'wb') as f:
-                pickle.dump(self.data, f)
-        else:
-            csv_file_path = path.join(save_dir, f'{self.filename}.csv')
-            self.data.to_csv(csv_file_path, sep='\t', index=False)
+        csv_file_path = path.join(save_dir, f'{self.filename}')
+        self.data.to_csv(csv_file_path, sep='\t', index=False)
+
 
 class SomeDatamodule(DataLoader):
     """
