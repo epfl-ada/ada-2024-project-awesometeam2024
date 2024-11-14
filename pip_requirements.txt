@@ -6,3 +6,5 @@ matplotlib==3.8.4
 wandb==0.17.2
 torch==2.5.1
 SPARQLWrapper==2.0.0
+sklearn==1.5.2
+xgboost==2.1.2
