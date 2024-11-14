@@ -18,10 +18,16 @@ Ideas: attribute recomendations? Like, given the genre and some other attributes
 The questions are organized as milestones to guide our analysis, helping us systematically examine the factors that contribute to high box office revenue for a successful project outcome.
 
 **Questions : understanding individual features**
-- What types of films generate the most revenue?
-- Does a film’s runtime have an impact on its financial performance? 
-- What period is better for a movie release ? (eg. summer, holiday, others)
-- Does ethnicity, age or gender of leading actors influences box office revenue?
+- What is the average box office revenue by release season (e.g., summer, winter holiday, other)?
+- Which genres have the highest average box office revenue?
+- How does film runtime correlate with box office revenue? Do longer or shorter films tend to perform better?
+- Which 10 languages have the highest average box office revenue?
+- Which 10 actors have the highest average box office revenue?
+- What is the average box office revenue by actors age group?
+- Does the gender distribution of actors in a film influence its average box office revenue?
+- What is the average box office revenue based on the gender predominance in the movie cast?
+- What is the average box office revenue based on the ethnic diversity in the movie cast?
+- Which 10 ethnicities have the highest average box office revenue?
 
 **Questions : find correlation**
 - Does the film language influences revenue in a specific country?

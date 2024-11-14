@@ -70,6 +70,13 @@ def convert_to_dict(dict_str):
     except json.JSONDecodeError as e:
         return {} 
     
+def convert_to_list(dict_str):
+    data = convert_to_dict(dict_str)
+    if not isinstance(data, dict):
+        return data
+    
+    return list(data.values())
+    
     
 def get_name_from_freebase_id(freebase_id):
     if not freebase_id:
@@ -103,17 +110,12 @@ def get_name_from_freebase_id(freebase_id):
         return None
     
     
-def create_genre_list(data_str):
-    data = convert_to_dict(data_str)
-    if not isinstance(data, dict):
-        return data
-    
-    data = list(data.values())
+def create_genre_list(data):
 
     new_data = []
     
     for genre in data:
-        # Standardize genre names
+        # Clean genre names
         genre = genre.lower()\
             .replace('romantic', 'romance')\
             .replace('sci-fi', 'science-fiction')\
