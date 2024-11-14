@@ -1,6 +1,57 @@
 import json
 from SPARQLWrapper import SPARQLWrapper, JSON
 
+def get_day(date_str):
+    """
+    Get the day from a date string.
+    Args:
+        date_str (str): A date string in the format 'YYYY-MM-DD'.
+        
+    Returns:
+        int: The day of the date.
+    """
+    if not isinstance(date_str, str):
+        return date_str
+    
+    date = date_str.split('-')
+    if len(date) < 3:
+        return None
+    return int(date[2])
+
+def get_month(date_str):
+    """
+    Get the month from a date string.
+    Args:
+        date_str (str): A date string in the format 'YYYY-MM-DD'.
+        
+    Returns:
+        int: The month of the date.
+    """
+    if not isinstance(date_str, str):
+        return date_str
+    
+    date = date_str.split('-')
+    if len(date) < 2:
+        return None
+    return int(date[1])
+
+def get_year(date_str):
+    """
+    Get the year from a date string.
+    Args:
+        date_str (str): A date string in the format 'YYYY-MM-DD'.
+        
+    Returns:
+        int: The year of the date.
+    """
+    if not isinstance(date_str, str):
+        return date_str
+    
+    date = date_str.split('-')
+    if len(date) < 1:
+        return None
+    return int(date[0])
+
 def convert_to_dict(dict_str):
     """
     Convert a string representation of a dictionary to a dictionary object.
@@ -92,8 +143,9 @@ def create_genre_list(data_str):
 
     
 def create_ethnicity_list(data_str):
-    if not data_str:
-        return []
+    if not isinstance(data_str, dict):
+        return data_str
+    
     # Standardize ethnicity names
     new = data_str.lower()\
         .replace('ans', 'an')\
@@ -118,18 +170,21 @@ def create_ethnicity_list(data_str):
     return new.split()
         
     
-def categorize_release_season(date):
+def categorize_release_season(month):
     """
     Categorize a release date into one of the following categories: Spring, Summer, Holiday, or Other.
     Args:
-        date (datetime): The release date of a movie.
+        date: The release date of a movie.
         
     Returns:
         str: The category of the release date.
     """
-    if date.month in [6, 7, 8]:  # Summer months
+    if not isinstance(month, float):
+        return month
+
+    elif month in [6, 7, 8]:  # Summer months
         return 'Summer'
-    elif date.month in [1, 12]:  # Winter holiday
+    elif month in [1, 12]:  # Winter holiday
         return 'Holiday'
     else:
         return 'Other'
@@ -143,8 +198,9 @@ def categorize_age_group(age):
     Returns:
         str: The category of the release date.
     """
-    if age is None:
-        return None
+    if not isinstance(age, float):
+        return age
+    
     if 0 <= age < 13:
         return 'child'
     elif age < 18:
