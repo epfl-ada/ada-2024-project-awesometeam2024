@@ -143,10 +143,10 @@ def create_genre_list(data_str):
 
     
 def create_ethnicity_list(data_str):
-    if not isinstance(data_str, dict):
-        return data_str
-    
-    # Standardize ethnicity names
+    if not data_str:
+        return []
+
+    # Clean ethnicity names
     new = data_str.lower()\
         .replace('ans', 'an')\
         .replace('people', '')\
