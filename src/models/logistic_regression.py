@@ -1,7 +1,7 @@
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
 
-class SklearnLogisticRegression:
+class LogisticRegression:
     def __init__(self, C=1.0, max_iter=150, solver='lbfgs', threshold=0.5, multi_class='auto'):
         """
         Initializes the Logistic Regression model with sklearn's LogisticRegression.
