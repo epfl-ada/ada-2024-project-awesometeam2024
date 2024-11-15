@@ -9,3 +9,5 @@ SPARQLWrapper==2.0.0
 sklearn==1.5.2
 xgboost==2.1.2
 statsmodels==0.13.0
+sklearn==1.5.2
+fuzzywuzzy==0.18.0
