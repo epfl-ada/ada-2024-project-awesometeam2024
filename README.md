@@ -4,7 +4,7 @@
 ## Abstract
 Since the very beginning, the movie industry is continuously evolving to meet consumer demands and remain profitable. While every year brings its own technical improvements, key film attributes—such as genre, release date, and runtime—still significantly influence box office revenue.
 This study aims to investigate these factors to understand their influence on box office revenue, identifying the most common predictors of a film’s financial success.
-Using the [CMU Movie Summary Corpus Dataset](https://www.cs.cmu.edu/~ark/personas/), we are first going to preprocess the data to extract and measure the quality of the data. Secondly, a first per-feature analysis will allow us to answer some basic questions to understand the impact of each feature separately. In the 3rd part, we will investigate the correlation between these variables. Finally, this analysis will use ML models (eg. linear regression) in order to create a predictive model for box office success based on historical data.
+Using the [CMU Movie Summary Corpus Dataset](https://www.cs.cmu.edu/~ark/personas/), we are first going to preprocess the data to extract and measure the quality of the data. Secondly, a first per-feature analysis will allow us to answer some basic questions to understand their impact separately. Then, we will investigate the correlation between these variables. Finally, this analysis will use ML models in order to create a predictive model for box office success based on historical data.
 This approach helps pinpoint key factors driving financial success, providing insights into the elements that most impact a movie's performance.
 
 ## Research Questions
