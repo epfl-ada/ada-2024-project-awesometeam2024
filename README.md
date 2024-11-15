@@ -11,9 +11,7 @@ This approach helps pinpoint key factors driving financial success, providing in
 
 The questions are organized as milestones to guide our analysis, helping us systematically examine the factors that contribute to high box office revenue for a successful project outcome.
 
-**Questions : understanding individual features**
-- What is the average box office revenue by release season (e.g., summer, winter holiday, other)?
-- Which genres have the highest average box office revenue?
+**Questions : understanding individual features and find correlation**
 - How does film runtime correlate with box office revenue? Do longer or shorter films tend to perform better?
 - Which 10 languages have the highest average box office revenue?
 - Which 10 actors have the highest average box office revenue?
@@ -22,6 +20,8 @@ The questions are organized as milestones to guide our analysis, helping us syst
 - What is the average box office revenue based on the gender predominance in the movie cast?
 - What is the average box office revenue based on the ethnic diversity in the movie cast?
 - Which 10 ethnicities have the highest average box office revenue?
+- How did box office evolved over time? How was it for each genre?
+- How has runtime changed along the years?
 
 **Questions : find correlation**
 - Does the film language influence revenue in a specific country?
@@ -50,7 +50,6 @@ Our ultimate goal is to predict the box office revenue of a movie based on the c
 - **Data description** :
    - use confidence intervals to quantify uncertainty in our EDA
    - use Pearson's correlation to look for correlated variables
--
 
 ## Proposed timeline
 This timeline defines milestones for our project but is not rigid. Often, we had to go back to the previous step when our findings revealed that we had to change our methods.
@@ -80,11 +79,11 @@ We made choices during this analysis, either because of the time or because of w
 
 We organize ourselves with one leader for each task/step of the project and at least 3 teammates to review. Here is a summary of the organization :
 
+- **Nicolas** : Step 1 and 2
 - **Andrea** : Step 3
-- **Ines** : Step 6 and 7
 - **Vasco** : Step 4
 - **Ahmed** : Step 5
-- **Nicolas** : Step 1 and 2
+- **Ines** : Step 6 and 7
 
 ## Quickstart
 
