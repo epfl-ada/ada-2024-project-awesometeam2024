@@ -2,7 +2,7 @@
 # ADA to break the movie industry
 
 ## Abstract
-Since the very beginning, the movie industry is continuously evolving to meet consumer demands and remain profitable. While every year brings its own technical improvements, key film attributes—such as genre, release date, and runtime—still significantly influence box office revenue.
+Since the very beginning, the movie industry is continuously evolving to meet consumer demands and remain profitable. Key film attributes - such as genre, release date, and runtime — still significantly influence box office revenue.
 This study aims to investigate these factors to understand their influence on box office revenue, identifying the most common predictors of a film’s financial success.
 Using the [CMU Movie Summary Corpus Dataset](https://www.cs.cmu.edu/~ark/personas/), we are first going to preprocess the data to extract and measure the quality of the data. Secondly, a first per-feature analysis will allow us to answer some basic questions to understand their impact separately. Then, we will investigate the correlation between these variables. Finally, this analysis will use ML models in order to create a predictive model for box office success based on historical data.
 This approach helps pinpoint key factors driving financial success, providing insights into the elements that most impact a movie's performance.
@@ -22,16 +22,10 @@ The questions are organized as milestones to guide our analysis, helping us syst
 - Which 10 ethnicities have the highest average box office revenue?
 - How did box office evolved over time? How was it for each genre?
 - How has runtime changed along the years?
-
-**Questions : find correlation**
-- Does the film language influence revenue in a specific country?
-- Do some countries prefer a specific genre?
-- Which languages perform better outside of where they are spoken?
-- How box office revenues changed in critical world situations (pandemic, economic crisis)?
-- How do these features evolve over time?
+- How have these features evolve over time?
 
 **Output model** \
-Gathering answers from the previous question, this helps us choose one model for predicting box office revenue. Nevertheless, we still have to choose the best one.
+Gathering answers from the previous questions, this helps us choose one model for predicting box office revenue. Nevertheless, we still have to choose the best one.
 - Can we predict a new film’s box office revenue based on its genre, language, runtime, and cast?
 - Which model is the best ?
 
@@ -64,7 +58,7 @@ This step involved understanding and manipulating the data in order to be able t
 We answered the first series of questions regarding the dataset in order to separately understand the influence of genre, runtime, actors ethnicity on box office revenue.
 
 #### Step 4 : Analysis of correlations between variables
-After understanding how each feature independently affects the revenue, we must understand if a certain combination of these specific features can drastically improve the final outcome of the movie. For that, we should first try to find the correlation between : movie country and genres, movie language and countries. And then, see if it affects revenue.
+After understanding how each feature independently affects the revenue, we must understand if a certain combination of these specific features can drastically improve the final outcome of the movie.
 
 #### Step 5 : Define, apply and upgrade model for predictive analysis
 Upon gathering all the knowledge from the previous step, we have to look for the best model for our ultimate goal. This involves testing its/their accuracy and try to improve it.
