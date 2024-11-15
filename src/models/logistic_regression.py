@@ -8,10 +8,10 @@ class PredLogisticRegression:
         Initializes the Logistic Regression model.
 
         Args:
-            C (float): Inverse of regularization strength; must be a positive float.
-            max_iter (int): Maximum number of iterations for the solver.
-            solver (str): Algorithm to use in the optimization problem.
-            threshold (float): Probability threshold for binary classification.
+            C: Inverse of regularization strength; must be a positive float.
+            max_iter: Maximum number of iterations for the solver.
+            solver: Algorithm to use in the optimization problem.
+            threshold: Probability threshold for binary classification.
         """
         self.model = LogisticRegression(
             C=C,
@@ -26,8 +26,8 @@ class PredLogisticRegression:
         Fits the model to the training data.
 
         Args:
-            X_train (np.ndarray or pd.DataFrame): Training feature data.
-            y_train (np.ndarray or pd.Series): Target variable for training.
+            X_train: Training feature data.
+            y_train: Target variable for training.
         """
         self.model.fit(X_train, y_train)
 
@@ -36,10 +36,10 @@ class PredLogisticRegression:
         Predicts class labels for samples in X.
 
         Args:
-            X (np.ndarray or pd.DataFrame): Feature data for predictions.
+            X Feature data for predictions.
 
         Returns:
-            np.ndarray: Predicted class labels.
+            Predicted class labels.
         """
         if len(self.model.classes_) == 2:  # Binary classification
             return (self.model.predict_proba(X)[:, 1] >= self.threshold).astype(int)
@@ -51,8 +51,8 @@ class PredLogisticRegression:
         Evaluates the model's performance and returns accuracy, precision, recall, and F1 score.
 
         Args:
-            y_true (np.ndarray or pd.Series): True class labels.
-            X (np.ndarray or pd.DataFrame): Feature data for evaluation.
+            y_true: True class labels.
+            X: Feature data for evaluation.
 
         Returns:
             dict: Evaluation metrics (Accuracy, Precision, Recall, F1 Score).

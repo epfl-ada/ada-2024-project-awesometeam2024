@@ -32,9 +32,14 @@ Gathering answers from the previous questions, this helps us choose one model fo
 
 Comparing the actual and predicted box office results, it could provide insight into the key factors that influence financial success in the film industry
 
-## Proposed additional datasets
+## Proposed Additional Datasets
 
-There are no direct additional datasets.
+To improve the models' predictive accuracy, we propose incorporating additional datasets. One such dataset is:
+
+1. **Kaggle's Movie Financials Dataset**  
+   - **Source**: [Kaggle - Movie Franchises Financial Data](https://www.kaggle.com/)  
+   - **Details**: This dataset includes financial and technical data for movies, such as budgets, lifetime gross, release dates, ratings, runtimes, and user votes.  
+   - **Purpose**: By integrating budget data, we refined our classification threshold for high-revenue movies, allowing us to differentiate between successful and underperforming movies more accurately.
 
 ## Methods
 

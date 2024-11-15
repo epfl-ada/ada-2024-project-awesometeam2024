@@ -7,11 +7,11 @@ class CustomLogisticRegression:
         Initializes the Custom Logistic Regression model with gradient descent.
 
         Args:
-            gamma (float): Learning rate for gradient descent.
-            lambda_ (float): Regularization strength.
-            max_iters (int): Maximum number of iterations for gradient descent.
-            convergence_threshold (float): Threshold for convergence.
-            threshold (float): Probability threshold for binary classification.
+            gamma: Learning rate for gradient descent.
+            lambda_: Regularization strength.
+            max_iters: Maximum number of iterations for gradient descent.
+            convergence_threshold: Threshold for convergence.
+            threshold: Probability threshold for binary classification.
         """
         self.gamma = gamma
         self.lambda_ = lambda_
@@ -29,11 +29,11 @@ class CustomLogisticRegression:
         Calculates the gradient for logistic regression with L2 regularization.
         
         Args:
-            y (np.ndarray): Target values.
-            tx (np.ndarray): Feature matrix with bias term.
+            y: Target values.
+            tx: Feature matrix with bias term.
 
         Returns:
-            np.ndarray: Computed gradient vector.
+            Computed gradient vector.
         """
         pred = self.sigmoid(tx.dot(self.w))
         grad = tx.T.dot(pred - y) / y.shape[0]
@@ -45,11 +45,11 @@ class CustomLogisticRegression:
         Computes the logistic loss with L2 regularization.
         
         Args:
-            y (np.ndarray): Target values.
-            tx (np.ndarray): Feature matrix with bias term.
+            y: Target values.
+            tx: Feature matrix with bias term.
 
         Returns:
-            float: Computed loss value.
+            Computed loss value.
         """
         pred = self.sigmoid(tx.dot(self.w))
         regularization = (self.lambda_ / 2) * np.sum(self.w[1:] ** 2)
@@ -61,13 +61,13 @@ class CustomLogisticRegression:
         Trains logistic regression using gradient descent and tracks best F1 score on validation set.
 
         Args:
-            y_train (np.ndarray): Training target values.
-            x_train (np.ndarray): Training feature matrix.
-            y_val (np.ndarray): Validation target values.
-            x_val (np.ndarray): Validation feature matrix.
+            y_train: Training target values.
+            x_train: Training feature matrix.
+            y_val: Validation target values.
+            x_val: Validation feature matrix.
 
         Returns:
-            float: Best F1 score obtained during training.
+            Best F1 score obtained during training.
         """
         tx_train = np.c_[np.ones((x_train.shape[0], 1)), x_train]
         tx_val = np.c_[np.ones((x_val.shape[0], 1)), x_val]
@@ -100,10 +100,10 @@ class CustomLogisticRegression:
         Predicts binary labels based on the set probability threshold.
 
         Args:
-            tx (np.ndarray): Feature matrix for predictions with bias term.
+            tx: Feature matrix for predictions with bias term.
 
         Returns:
-            np.ndarray: Predicted binary class labels.
+            Predicted binary class labels.
         """
         pred_prob = self.sigmoid(tx.dot(self.w))
         return (pred_prob >= self.threshold).astype(int)
@@ -113,8 +113,8 @@ class CustomLogisticRegression:
         Evaluates the model's performance with accuracy, precision, recall, and F1 score.
         
         Args:
-            y_true (np.ndarray): True target values.
-            tx (np.ndarray): Feature matrix for evaluation.
+            y_true: True target values.
+            tx: Feature matrix for evaluation.
 
         Returns:
             dict: Evaluation metrics.

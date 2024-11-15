@@ -8,9 +8,9 @@ class RandomForestModel:
         Initializes the Random Forest Regressor with specified hyperparameters.
         
         Args:
-            n_estimators (int): Number of trees in the forest.
-            max_depth (int or None): Maximum depth of the trees. If None, nodes are expanded until all leaves are pure.
-            random_state (int): Seed for random number generation.
+            n_estimators: Number of trees in the forest.
+            max_depth: Maximum depth of the trees. If None, nodes are expanded until all leaves are pure.
+            random_state: Seed for random number generation.
         """
         self.model = RandomForestRegressor(
             n_estimators=n_estimators,
@@ -23,8 +23,8 @@ class RandomForestModel:
         Fits the model to the training data.
         
         Args:
-            X_train (np.ndarray or pd.DataFrame): Training feature data.
-            y_train (np.ndarray or pd.Series): Target variable for training.
+            X_train: Training feature data.
+            y_train: Target variable for training.
         """
         self.model.fit(X_train, y_train)
     
@@ -33,10 +33,10 @@ class RandomForestModel:
         Predicts continuous values using the trained model.
         
         Args:
-            X (np.ndarray or pd.DataFrame): Feature data for predictions.
+            X: Feature data for predictions.
         
         Returns:
-            np.ndarray: Predicted values.
+            Predicted values.
         """
         return self.model.predict(X)
 
@@ -45,8 +45,8 @@ class RandomForestModel:
         Evaluates the model using MAE, MSE, and RMSE metrics.
         
         Args:
-            X_test (np.ndarray or pd.DataFrame): Test feature data.
-            y_test (np.ndarray or pd.Series): True values for the test set.
+            X_test: Test feature data.
+            y_test: True values for the test set.
         
         Returns:
             dict: Evaluation metrics (MAE, MSE, RMSE).
@@ -61,12 +61,3 @@ class RandomForestModel:
         print(f"Root Mean Squared Error (RMSE): {rmse:.2f}")
         
         return {"MAE": mae, "MSE": mse, "RMSE": rmse}
-
-    def get_feature_importance(self):
-        """
-        Retrieves feature importances from the trained model.
-        
-        Returns:
-            dict: Feature importance scores as a dictionary, useful for analysis.
-        """
-        return dict(zip(self.model.feature_names_in_, self.model.feature_importances_))

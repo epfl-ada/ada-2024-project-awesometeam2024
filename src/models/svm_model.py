@@ -7,10 +7,10 @@ class SVMModel:
         Initializes the SVM model for classification.
         
         Args:
-            kernel (str): Kernel type to be used in the algorithm ('linear', 'rbf', 'poly', etc.).
-            C (float): Regularization parameter.
-            gamma (str or float): Kernel coefficient for 'rbf', 'poly', and 'sigmoid'.
-            threshold (float): Probability threshold for binary classification.
+            kernel: Kernel type to be used in the algorithm ('linear', 'rbf', 'poly', etc.).
+            C: Regularization parameter.
+            gamma: Kernel coefficient for 'rbf', 'poly', and 'sigmoid'.
+            threshold: Probability threshold for binary classification.
         """
         self.model = SVC(kernel=kernel, C=C, gamma=gamma, probability=True, random_state=42)
         self.threshold = threshold
@@ -20,8 +20,8 @@ class SVMModel:
         Trains the SVM model.
         
         Args:
-            X_train (np.ndarray or pd.DataFrame): Training feature data.
-            y_train (np.ndarray or pd.Series): Training target labels.
+            X_train: Training feature data.
+            y_train: Training target labels.
         """
         self.model.fit(X_train, y_train)
 
@@ -30,10 +30,10 @@ class SVMModel:
         Predicts binary labels for given feature data.
         
         Args:
-            X (np.ndarray or pd.DataFrame): Feature data for predictions.
+            X: Feature data for predictions.
         
         Returns:
-            np.ndarray: Predicted binary labels.
+            Predicted binary labels.
         """
         pred_probs = self.model.predict_proba(X)[:, 1]
         return (pred_probs >= self.threshold).astype(int)
@@ -43,8 +43,8 @@ class SVMModel:
         Evaluates the SVM model on given data and prints evaluation metrics.
         
         Args:
-            y_true (np.ndarray or pd.Series): True labels.
-            X (np.ndarray or pd.DataFrame): Feature data to evaluate.
+            y_true: True labels.
+            X: Feature data to evaluate.
         
         Returns:
             dict: Dictionary of evaluation metrics (Accuracy, Precision, Recall, F1 Score).
