@@ -1,1 +1,41 @@
-{{ content }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+    <header>
+        <h1>{{ page.title }}</h1>
+        <p>{{ content }}</p>
+    </header>
+    <main>
+        <!-- Section 1 -->
+        <section>
+            <h2>{{ page.section_1_heading }}</h2>
+            <p>{{ page.section_1_description }}</p>
+        </section>
+        
+        <!-- Section 2 -->
+        <section>
+            <h2>{{ page.section_2_heading }}</h2>
+            <p>{{ page.section_2_description }}</p>
+        </section>
+        
+        <!-- D3 Chart Placeholder -->
+        <section>
+            <h2>Interactive Chart</h2>
+            <div id="chart-container">
+                <svg id="chart" width="600" height="400"></svg>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Awesome Team</p>
+    </footer>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
+</html>
