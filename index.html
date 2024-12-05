@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Single Page Website</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <section id="introduction">
+            <h2>Introduction: Lights, Camera, Data!</h2>
+            <p>
+                Fasten your seatbelts and embark on our interactive data story. Through this story, you will get to understand the world of
+                cinema from a different perspective. Side-by-side, we will explore the factors that make a movie successful and try answer the question
+                one billion-dollar question: Can we predict the success of a movie?
+            </p>
+            <p>
+                We will take you through the journey of the movie industry, from the early days of black-and-white silent films to the modern-day
+                blockbusters. We will explore the trends that have shaped the industry, the genres that have dominated the box office, and the actors
+                that have brought magic to the screen. 
+            </p>
+            <p>
+                But first of all, let's introduce ourselves. We are a team of students with different backgrounds from EPFL's CS-401 course 
+                united by this project. We dived into the <a href="https://www.cs.cmu.edu/~ark/personas/">CMU Movie dataset</a> wondering if we
+                could predict the success of a movie. But let's start from the beginning.
+            </p>
+        </section>
+
+        <section id="defining-success">
+            <h2>What is Success ?</h2>
+            <p>
+                For this story, we're looking at box office revenue as our measure of success. But money isn't everything. 
+                A movie can be loved by everyone who watched it or win tons of awards even if it didn't make a ton of money. 
+                By sticking with box office revenue, we're focusing on financial success, but it's important to keep in mind there's 
+                more than one way to measure a movie's impact.
+            </p>
+            <div id="chart-container">
+                <svg id="chart" width="600" height="400"></svg>
+            </div>
+        </section>
+
+        <section id="release_date">
+            <h2>Timing Is Everything</h2>
+            <p>
+                As we can imagine, the release date as a strong impact on the film's performance. First by plotting the data,
+                we discover that summer is the best period to release a movie. More specifically, in the month of June. This 
+                was confirmed when assessing the correlation between the release month and the revenue. (TODO : add the correlation value)
+            </p>
+            <p>
+                This is obviously linked with the fact that people are more likely to go to the cinema during the summer : 
+                kids are on holiday and parents are looking for activities to do with them.
+            </p>
+            <div id="chart-container">
+                <svg id="chart" width="600" height="400"></svg>
+            </div>
+        </section>
+
+        <section id="genre">
+            <h2>The Genre Game: Trends That Shape Tastes</h2>
+            <p>
+                Trends through the years until now. What is leading
+                the market and what is the future of the genre
+            </p>
+            <div id="chart-container">
+                <svg id="chart" width="600" height="400"></svg>
+            </div>
+        </section>
+
+        <section id="runtime">
+            <h2>Too short, too long, or just right?</h2>
+            <p>
+                The runtime of a movie is a key factor in its success. Too short and the audience might feel cheated, too 
+                long and they might get bored. But before that, the evloution of the runtime of movies reflects the technical 
+                evolution of the industry. In the early days, movies were very short. But when technique was no longer a problem, 
+                movies started to get longer and longer before shrinking again to stabillize around 105 minutes.
+            </p>
+            <div id="chart-container">
+                Dual interactive plot with selector for the year : 1 plot for average revenue, 1 plot for average runtime
+                <svg id="chart" width="600" height="400"></svg>
+            </div>
+            <p>
+                Of course, you could say that this data does not represent he ground truth but only shows what happened in the past. 
+                And you are absolutly right ! We are not saying that short movies will performed less but simply that less and less 
+                movies are produced with a short runtime. One reason could be the use of different platform like youtube for this 
+                kind of formats.
+            </p>
+        </section>
+
+        <section id="languages">
+            <h2>Languages</h2>
+            <p>Trends. Which region prefer which languages</p>
+            <div id="chart-container">
+                <svg id="chart" width="600" height="400"></svg>
+            </div>
+        </section>
+
+        <section id="actors">
+            <h2>Who Brings the Magic?</h2>
+            <h3>The Youth Advantage vs. Timeless Talent</h3>
+            <div id="chart-container">
+                <svg id="chart" width="600" height="400"></svg>
+            </div>
+            <p>
+                In general, films with younger casts seem to perform better on average, suggesting a potential trend that producers 
+                might want to explore further. Younger actors may connect better with certain target audiences, particularly with 
+                the youngest. However, while this observation is intriguing, it's important to approach it with caution. The smaller sample 
+                size for younger casts makes the data less stable and more prone to volatility, meaning this trend could be more 
+                coincidental than reliable. In contrast, the larger quantity of samples for films featuring adult casts provides more 
+                robust statitics. It's a good place to remind you to be careful when reading data !
+            </p>
+            
+            <h3>Redefining the Spotlight</h3>
+            <p>Genre : </p>
+            <div id="chart-container">
+                <svg id="chart" width="600" height="400"></svg>
+            </div>
+            <h3>Stories in Every Shade</h3>
+            <p>Ethinicity : </p>
+            <div id="chart-container">
+                <svg id="chart" width="600" height="400"></svg>
+            </div>
+            <h3>Faces That Fill Seats</h3>
+            <p>Leading actors</p>
+            <div id="chart-container">
+                <svg id="chart" width="600" height="400"></svg>
+            </div>
+        </section>
+
+        <section id="summary_analsys">
+            <h2>Emotions Behind the Words</h2>
+            <p><!-- Add your description here --></p>
+            <div id="chart-container">
+                <svg id="chart" width="600" height="400"></svg>
+            </div>
+        </section>
+
+        <!-- Section 5: Relationships -->
+        <section id="relationships">
+            <h2>The Relationships: Untangling Dependencies</h2>
+            <p><!-- Add your description here --></p>
+            <div class="visual-placeholder">
+                <!-- Add your network graph or other visual here -->
+            </div>
+        </section>
+
+        <section id="outliers">
+            <h2>When Movies Break the Mold</h2>
+            <p><!-- Add your description here --></p>
+            <div class="visual-placeholder">
+                <!-- Add your annotated scatterplot or other visual here -->
+            </div>
+        </section>
+
+        <section id="formula-for-success">
+            <h2>The Formula for Success: From Data to Blockbuster</h2>
+            <p>
+                The different model why try to use to predict. What they were using and what results they gave.
+            </p>
+            <div class="visual-placeholder">
+                <!-- Add your flowchart or decision tree here -->
+            </div>
+        </section>
+
+        <section id="epilogue">
+            <h2>Epilogue</h2>
+            <p><!-- Add your description here --></p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Awesome Team</p>
+    </footer>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="/assets/js/chart1.js"></script>
+</body>
+</html>
