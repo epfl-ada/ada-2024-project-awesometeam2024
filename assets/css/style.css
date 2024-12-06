@@ -27,6 +27,12 @@ h2 {
     line-height: 1.1;
 }
 
+h3 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
 /* Header */
 header {
     padding: 20px;
