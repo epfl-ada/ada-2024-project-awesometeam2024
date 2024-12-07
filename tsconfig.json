@@ -1,0 +1,10 @@
+{
+  // Root TypeScript configuration file for managing project references.
+  // References `tsconfig.app.json` for the frontend application
+  // and `tsconfig.node.json` for Node.js-related configurations.
+  "files": [], // No direct files included at the root
+  "references": [
+    { "path": "./tsconfig.app.json" }, // Frontend configuration
+    { "path": "./tsconfig.node.json" } // Node.js configuration
+  ]
+}

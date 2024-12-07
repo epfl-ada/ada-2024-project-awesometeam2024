@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "ES2022", // Modern target
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"], // Updated lib for modern JS and DOM APIs
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler", // Suitable for modern bundlers
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+    /* Aliases for Cleaner Imports */
+    "baseUrl": "./src", // Base path for imports
+    "paths": {
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@assets/*": ["assets/*"],
+    },
+
+    /* JSON Support */
+    "resolveJsonModule": true,
+
+    /* Type Declarations */
+    "types": ["react", "react-dom"]
+  },
+  "include": ["src/**/*"], // Include all source files
+  "exclude": ["node_modules"] // Exclude unnecessary directories
+}
