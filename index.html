@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Single Page Website</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>ADA to break the movie industry</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
     <header>
@@ -47,14 +48,15 @@
             <p>
                 As we can imagine, the release date as a strong impact on the film's performance. First by plotting the data,
                 we discover that summer is the best period to release a movie. More specifically, in the month of June. This 
-                was confirmed when assessing the correlation between the release month and the revenue. (TODO : add the correlation value)
+                was confirmed when assessing the correlation between the release month and the revenue. A correlation of 0.072 suggests release season alone is not a strong predictor of revenue in our dataset.
             </p>
             <p>
                 This is obviously linked with the fact that people are more likely to go to the cinema during the summer : 
                 kids are on holiday and parents are looking for activities to do with them.
             </p>
             <div id="chart-container">
-                <svg id="chart" width="600" height="400"></svg>
+                <svg id="chart_release_season" width="600" height="400"></svg>  
+                </svg>
             </div>
         </section>
 
@@ -216,6 +218,6 @@
         <p>&copy; 2024 Awesome Team</p>
     </footer>
     <script src="https://d3js.org/d3.v6.min.js"></script>
-    <script src="/assets/js/chart1.js"></script>
+    <script src="/assets/js/chart_release_season.js"></script>
 </body>
 </html>
