@@ -7,18 +7,20 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    color: #444;
+    color: #555;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color:#404040;
+    color:#444;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin:0 0 20px;
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 1em;
+    color:#f9f9f9;
     font-weight: 700;
+    margin: 0%;
 }
 
 h2 {
@@ -33,45 +35,25 @@ h3 {
     margin-top: 20px;
 }
 
-/* Header */
-header {
+header, footer {
     padding: 20px;
     background-color: #222;
+    color: #f9f9f9;
+    justify-content: center;
 }
 
-header p {
-    font-size: 1.2em;
-}
-
-/* Main Content */
 main {
     max-width: 800px;
     margin: 20px auto;
     padding: 0 20px;
 }
 
-/* Sections */
 section {
     margin-bottom: 20px;
     padding: 20px;
 }
 
-/* Chart Container */
 #chart-container {
     text-align: center;
     margin-top: 20px;
-}
-
-svg {
-    border: 1px solid #ddd;
-    background-color: #fff;
-    border-radius: 4px;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #4CAF50;
-    color: white;
 }
