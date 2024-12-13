@@ -56,4 +56,14 @@ section {
 #chart-container {
     text-align: center;
     margin-top: 20px;
+    width: 90%; /* Adjust width as needed (90% of the viewport width) */
+    height: 80vh; /* Set height to 80% of the viewport height */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto;
+}
+
+iframe {
+    width: 100%; /* Make the iframe take up the full container width */
+    height: 100%; /* Make the iframe take up the full container height */
+    border: none;
 }

@@ -4,9 +4,30 @@ const width = 600 - margin.left - margin.right;
 const height = 400 - margin.top - margin.bottom;
 
 // Select the SVG container
-const svg = d3.select("#chart_release_season")
-    .append("g")
+const svgContainer = d3.select("#chart_release_season")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom);
+
+const svg = svgContainer.append("g")
     .attr("transform", `translate(${margin.left},${margin.top})`);
+
+// Create a tooltip
+const tooltip = d3.select(".tooltip");
+
+// Zoom behavior
+const zoom = d3.zoom()
+    .scaleExtent([1, 5]) // Set zoom scale limits
+    .translateExtent([[0, 0], [width + margin.left + margin.right, height + margin.top + margin.bottom]]) // Limit panning
+    .on("zoom", (event) => {
+        zoomableGroup.attr("transform", event.transform);
+    });
+
+// Add the zoom behavior to the SVG
+svgContainer.call(zoom);
+
+// Group everything inside a zoomable `g`
+const zoomableGroup = svg.append("g");
 
 // Load the data from the CSV file
 d3.csv("assets/plots_data/chart_release_season.csv").then(data => {
@@ -28,7 +49,7 @@ d3.csv("assets/plots_data/chart_release_season.csv").then(data => {
         .range([height, 0]);
 
     // Add x-axis
-    svg.append("g")
+    zoomableGroup.append("g")
         .attr("transform", `translate(0,${height})`)
         .call(d3.axisBottom(x))
         .selectAll("text")
@@ -36,11 +57,11 @@ d3.csv("assets/plots_data/chart_release_season.csv").then(data => {
         .style("text-anchor", "end");
 
     // Add y-axis
-    svg.append("g")
+    zoomableGroup.append("g")
         .call(d3.axisLeft(y));
 
     // Add bars
-    svg.selectAll(".bar")
+    zoomableGroup.selectAll(".bar")
         .data(data)
         .enter()
         .append("rect")
@@ -49,10 +70,27 @@ d3.csv("assets/plots_data/chart_release_season.csv").then(data => {
         .attr("y", d => y(d.mean))
         .attr("width", x.bandwidth())
         .attr("height", d => height - y(d.mean))
-        .style("fill", "steelblue");
+        .style("fill", "steelblue")
+        .on("mouseover", (event, d) => {
+            tooltip.style("visibility", "visible")
+                .html(`<strong>Season:</strong> ${d.release_season}<br>
+                       <strong>Mean:</strong> ${d.mean}<br>
+                       <strong>SEM:</strong> ${d.sem}`)
+                .style("top", `${event.pageY - 10}px`)
+                .style("left", `${event.pageX + 10}px`);
+            d3.select(event.target).style("fill", "orange");
+        })
+        .on("mousemove", (event) => {
+            tooltip.style("top", `${event.pageY - 10}px`)
+                .style("left", `${event.pageX + 10}px`);
+        })
+        .on("mouseout", (event) => {
+            tooltip.style("visibility", "hidden");
+            d3.select(event.target).style("fill", "steelblue");
+        });
 
     // Add error bars
-    svg.selectAll(".error-line")
+    zoomableGroup.selectAll(".error-line")
         .data(data)
         .enter()
         .append("line")
