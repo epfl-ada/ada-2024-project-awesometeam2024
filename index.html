@@ -82,9 +82,9 @@
             <h2>Too short, too long, or just right?</h2>
             <p>
                 The runtime of a movie is a key factor in its success. Too short and the audience might feel cheated, too 
-                long and they might get bored. But before that, the evolution of the runtime of movies reflects the technical 
-                evolution of the industry. In the early days, movies were very short [This is not true, see out graph of average runtime]. But when technique was no longer a problem, 
-                movies started to get longer and longer before shrinking again to stabillize around 105 minutes.
+                long and they might get bored. We have discovered that movies between 1920 and 1950, movies were shorter, probably for 
+                technical reasons. But when technique was no longer a problem, movies started to get longer and longer before shrinking 
+                again to stabillize around 105 minutes.
             </p>
             <div id="chart-container">
                 <p>
@@ -93,16 +93,31 @@
                 <svg id="chart" width="600" height="400"></svg>
             </div>
             <p>
+                But what about the revenue ? We analysed the average revenue for each runtime categories and found with confidence 
+                that movies considered as "long" compare to others tend to perform better than shorter movies.
+            </p>
+            <div id="chart-container">
+                <p>
+                    Plot from the notebook with average box office revenue for each runtime categories for different periods.
+                </p>
+                <svg id="chart" width="600" height="400"></svg>
+            </div>
+            <p>
                 Of course, you could say that this data does not represent the ground truth but only shows what happened in the past. 
                 And you are absolutly right ! We are not saying that short movies will perform less but simply that less and less 
-                movies are produced with a short runtime [is this true? double check]. One reason could be the use of different platform like youtube for this 
-                kind of formats.
+                movies are produced with a short runtime. One reason could be that those shorter movies are now streamed on different 
+                platforms like youtube.
             </p>
         </section>
 
-        <section id="languages">
-            <h2>Languages</h2>
-            <p>Trends. Which region prefer which languages [the country in the dataset is not where it was released, but the countries that appear in the movie]</p>
+        <section id="location">
+            <h2>Exploring the Impact of a Movie's Location</h2>
+            <p>
+                The place where a movie's story happens is not just a background : it adds to the story and helps the audience connect. 
+                But how important is it really? In this part, we look at how the location of a movie might influence its success. 
+                We ask if some countries work better for audiences around the world and if this impacts how profitable the 
+                movie becomes.
+            </p>
             <div id="chart-container">
                 <svg id="chart" width="600" height="400"></svg>
             </div>
