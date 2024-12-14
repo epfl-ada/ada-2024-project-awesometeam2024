@@ -12,21 +12,21 @@ This approach helps pinpoint key factors driving financial success, providing in
 The questions are organized as milestones to guide our analysis, helping us systematically examine the factors that contribute to high box office revenue for a successful project outcome.
 
 **Questions : understanding individual features and find correlation**
-- How does film runtime correlate with box office revenue? Do longer or shorter films tend to perform better?
-- Which 10 languages have the highest average box office revenue?
-- Which 10 actors have the highest average box office revenue?
-- What is the average box office revenue by actors' age group?
-- Does the gender distribution of actors in a film influence its average box office revenue?
-- What is the average box office revenue based on the gender predominance in the movie cast?
-- What is the average box office revenue based on the ethnic diversity in the movie cast?
-- Which 10 ethnicities have the highest average box office revenue?
-- How did box office evolved over time? How was it for each genre?
-- How has runtime changed along the years?
-- How have these features evolve over time?
+- How does **_film runtime_** correlate with box office revenue? Do longer or shorter films tend to perform better?
+- How does **_film languages_** impact the box office revenue? Which languages have the highest average box office revenue?
+- Which **_actors_** appear in the films with the highest box office revenue?
+- What is the average box office revenue by **_actors' age group_**?
+- Does the **_gender distribution of actors_** in a film influence its average box office revenue?
+- What is the average box office revenue based on the **_gender predominance_** in the movie cast?
+- What is the average box office revenue based on the **_ethnic diversity_** in the movie cast?
+- Does the **_ethnicity of the actors_** impact average box office revenue?
+- How did **box office evolved over time**? How was it for each **_genre_**?
+- How has **_runtime_** changed **along the years**?
+- How was these **features evolution over time**?
 
 **Output model** \
-Gathering answers from the previous questions, this helps us choose one model for predicting box office revenue. Nevertheless, we still have to choose the best one.
-- Can we predict a new film’s box office revenue based on its genre, language, runtime, and cast?
+Gathering answers from the previous questions, this helps us choose one model for predicting the film success based on box office revenue. Nevertheless, we still have to choose the best one.
+- Can we predict a new film’s success based on its genre, language, runtime, and cast?
 - Which model is the best ?
 
 
