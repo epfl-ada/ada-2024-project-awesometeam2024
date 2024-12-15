@@ -27,6 +27,8 @@ def process_plot_summaries(df_plots):
     print(df_plots.sample(5))
 
 def process_movie_metadata(df_movies):
+    df_movies = df_movies.copy()
+
     # Removing freebase (deprecated)
     if 'freebase_movie_id' in df_movies.columns:
         df_movies.drop(columns=['freebase_movie_id'], inplace=True)
@@ -53,7 +55,9 @@ def process_movie_metadata(df_movies):
 
     df_movies.to_csv(CMU_DATA_PREPROCESSED_PATH + 'movie.metadata.csv', index=False)
 
-    print(df_movies.sample(10))
+    print("\n", df_movies.sample(5))
+
+    return df_movies
 
 def process_character_metadata(df_characters, df_movies):
     # Merge the character dataframe with the movie dataframe

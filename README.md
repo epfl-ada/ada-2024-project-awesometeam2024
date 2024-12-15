@@ -83,6 +83,11 @@ Our ultimate goal is to predict the success (on box office revenue) of a movie b
    - use confidence intervals to quantify uncertainty in our EDA
    - use Pearson's correlation to look for correlated variables
 
+- **Modeling** :
+    - Predict the box office revenue: Random Forest and Gradient Boosting
+    - Predict the success of a movie (high revenue or low revenue): Logistic Regression and SVM
+    - Features: runtime, release_year, is_holiday_release, num_actors, num_male_actors,num_female_actors, avg_actor_age
+
 ## Proposed timeline
 This timeline defines milestones for our project but is not rigid. Often, we had to go back to the previous step when our findings revealed that we had to change our methods.
 
