@@ -36,12 +36,12 @@ The questions are organized as milestones to guide our analysis, helping us syst
     - How has **_runtime_** changed along the years and how it correlates with revenue?
 
 **Output model** \
-Gathering answers from the previous questions, this helps us choose one model for predicting the film success based on box office revenue. Nevertheless, we still have to choose the best one.
+Gathering answers from the previous questions, this helps us choose one model for predicting the film success (on box office revenue). Nevertheless, we still have to choose the best one.
 - Can we predict a new film’s success based on its genre, language, runtime, and cast?
 - Which model is the best ?
 
 
-Comparing the actual and predicted box office results, it could provide insight into the key factors that influence financial success in the film industry
+Comparing the actual and predicted success results, it could provide insight into the key factors that influence financial success in the film industry
 
 ## Proposed Additional Datasets
 
@@ -54,9 +54,31 @@ To improve the models' predictive accuracy, we propose incorporating additional 
 
 ## Methods
 
-Our ultimate goal is to predict the box office revenue of a movie based on the correlation of multiple features. Here is a summary of techniques that we have used along the way :
+Our ultimate goal is to predict the success (on box office revenue) of a movie based on the correlation of multiple features. Here is a summary of techniques that we have used along the way :
 - **Data preprocessing** : clean missing / inconsistent data
-- **Data visualization** : histogram, barplot, line plot to help catch trends and distribution of the data
+    - Movie metadata : 
+        - remove irrelevant columns (e.g., freebase_movie_id)
+        - remove films with box office revenue missing; 
+        - separate date into year, month, day
+        - drop outliers
+        - separate genres into a list of genres (Action/Adventure -> [Action, Adventure])
+    - Character metadata :
+        - append the box office revenue of the correspondent movie
+        - remove irrelevant columns (e.g., freebase_movie_id)
+        - substitute Actor ethnicity Freebase ID by the corresponding name (e.g., /m/0x67 -> African Americans)
+        - separate ethnicity into a list of ethnicities (African Americans -> [African, American])
+
+- **Data visualization** : histogram, barplot, line plot to help catch trends and distribution of the data for the following features :
+    - Release Season
+    - Genre
+    - Runtime
+    - Languages
+    - Actors
+        - Age
+        - Gender
+        - Ethnicity
+    - Evolution over time
+
 - **Data description** :
    - use confidence intervals to quantify uncertainty in our EDA
    - use Pearson's correlation to look for correlated variables
@@ -71,7 +93,7 @@ The goal here was to clearly state which questions we wanted to answer with this
 This step involved understanding and manipulating the data in order to be able to further analyze it. We came back multiple times to this step in order to improve our preprocessing pipeline.
 
 #### Step 3 : Exploratory Data Analysis
-We answered the first series of questions regarding the dataset in order to separately understand the influence of genre, runtime, actors ethnicity on box office revenue.
+We answered the first series of questions regarding the dataset in order to separately understand the influence of genre, runtime, actors gender and ethnicity on box office revenue.
 
 #### Step 4 : Analysis of correlations between variables
 After understanding how each feature independently affects the revenue, we must understand if a certain combination of these specific features can drastically improve the final outcome of the movie.
@@ -87,13 +109,15 @@ We made choices during this analysis, either because of the time or because of w
 
 ## Organization within the team
 
-We organize ourselves with one leader for each task/step of the project and at least 3 teammates to review. Here is a summary of the organization :
+We organize ourselves with one leader for each task/step of the project and all other teammates also contribute and review. Here is a summary of the organization :
 
-- **Nicolas** : Step 1 and 2
-- **Andrea** : Step 3
-- **Vasco** : Step 4
-- **Ahmed** : Step 5
-- **Ines** : Step 6 and 7
+- **Nicolas** : Step 1 and 2 (Defining objectives and Data collection)
+- **Andrea** : Step 3 (Exploratory Data Analysis)
+- **Vasco** : Step 4 (Analysis of correlations between variables)
+- **Ahmed** : Step 5 (Define, apply and upgrade model for predictive analysis)
+- **Ines** : Step 6 and 7 (Communicate results and Find areas of improvements)
+
+For the data story we all contribute, increasing (and correcting potential mistakes) the work of the colleague who previously submitted.
 
 ## Quickstart
 
@@ -104,6 +128,8 @@ cd <project repo>
 
 # install requirements
 pip install -r pip_requirements.txt
+
+# open jupyter notebook results.ipynb in a code editor and run the cells
 ```
 
 ## Project Structure
@@ -112,6 +138,9 @@ The directory structure of new project looks like this:
 
 ```
 ├── data                        <- Project data files
+│   ├── initial                         <- Initial data directory (CMU Movie Summary Corpus)
+│   ├── new_data                        <- Additional data directory (Kaggle's Movie Financials)
+│   ├── preprocessed                    <- Preprocessed data directory
 │
 ├── src                         <- Source code
 │   ├── data                            <- Data directory
@@ -123,5 +152,5 @@ The directory structure of new project looks like this:
 │
 ├── .gitignore                  <- List of files ignored by git
 ├── pip_requirements.txt        <- File for installing python dependencies
-└── README.md
+└── README.md                   <- Project description
 ```
