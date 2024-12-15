@@ -12,21 +12,32 @@ This approach helps pinpoint key factors driving financial success, providing in
 The questions are organized as milestones to guide our analysis, helping us systematically examine the factors that contribute to high box office revenue for a successful project outcome.
 
 **Questions : understanding individual features and find correlation**
-- How does film runtime correlate with box office revenue? Do longer or shorter films tend to perform better?
-- Which 10 languages have the highest average box office revenue?
-- Which 10 actors have the highest average box office revenue?
-- What is the average box office revenue by actors' age group?
-- Does the gender distribution of actors in a film influence its average box office revenue?
-- What is the average box office revenue based on the gender predominance in the movie cast?
-- What is the average box office revenue based on the ethnic diversity in the movie cast?
-- Which 10 ethnicities have the highest average box office revenue?
-- How did box office evolved over time? How was it for each genre?
-- How has runtime changed along the years?
-- How have these features evolve over time?
+1. Release Season
+    - How does **_release season_** correlate with box office revenue? Do films realeased in a specific season (e.g., summer, winter holiday, other) tend to perform better?
+2. Genre
+    - Which **_film genres_** have the highest average box office revenue? Are there genres that perform better than others?
+3. Runtime
+    - How does **_film runtime_** correlate with box office revenue? Do longer or shorter films tend to perform better?
+4. Languages
+    - How does **_film languages_** impact the box office revenue? Which languages have the highest average box office revenue?
+5. Actors
+    - Which **_actors_** appear in the films with the highest box office revenue? Does the presence of a specific actor influence box office revenue?
+
+    1. Actors Age
+        - What is the average box office revenue by **_actors' age group_** (child, teen, young adult, adult and senior)?
+    2. Actors Gender
+        - Does the **_gender distribution of actors_** in a film influence its average box office revenue?
+        - What is the average box office revenue based on the **_gender predominance_** in the movie cast?
+    3. Actors Ethnicity
+        - What is the average box office revenue based on the **_ethnic diversity_** in the movie cast?
+        - Does the **_ethnicity of the actors_** impact average box office revenue? Which ethnicities have the highest average box office revenue?
+6. Evolution over time
+    - How did **box office revenue** evolved over time? How was it for each **_genre_**?
+    - How has **_runtime_** changed along the years and how it correlates with revenue?
 
 **Output model** \
-Gathering answers from the previous questions, this helps us choose one model for predicting box office revenue. Nevertheless, we still have to choose the best one.
-- Can we predict a new film’s box office revenue based on its genre, language, runtime, and cast?
+Gathering answers from the previous questions, this helps us choose one model for predicting the film success based on box office revenue. Nevertheless, we still have to choose the best one.
+- Can we predict a new film’s success based on its genre, language, runtime, and cast?
 - Which model is the best ?
 
 
