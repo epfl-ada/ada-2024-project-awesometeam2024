@@ -1,4 +1,5 @@
 import json
+from textblob import TextBlob
 from SPARQLWrapper import SPARQLWrapper, JSON
 
 def get_day(date_str):
@@ -213,3 +214,7 @@ def categorize_age_group(age):
         return 'adult'
     else:
         return 'senior'
+
+def get_textblob_sentiment(text):
+    blob = TextBlob(text)
+    return blob.sentiment
