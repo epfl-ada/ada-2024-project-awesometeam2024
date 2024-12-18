@@ -13,7 +13,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     color:#444;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin:0 0 20px;
+    margin:0 0 10px;
 }
 
 h1 {
@@ -32,7 +32,7 @@ h2 {
 h3 {
     font-size: 1.5em;
     font-weight: 700;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 header, footer {
@@ -49,13 +49,12 @@ main {
 }
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     padding: 20px;
 }
 
 #chart-container {
     text-align: center;
-    margin-top: 20px;
     width: 90%; /* Adjust width as needed (90% of the viewport width) */
     height: 80vh; /* Set height to 80% of the viewport height */
     margin-left: auto; /* Center horizontally */
