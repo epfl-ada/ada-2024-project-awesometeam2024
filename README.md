@@ -7,6 +7,9 @@ This study aims to investigate these factors to understand their influence on bo
 Using the [CMU Movie Summary Corpus Dataset](https://www.cs.cmu.edu/~ark/personas/), we are first going to preprocess the data to extract and measure the quality of the data. Secondly, a first per-feature analysis will allow us to answer some basic questions to understand their impact separately. Then, we will investigate the correlation between these variables. Finally, this analysis will use ML models in order to create a predictive model for box office success based on historical data.
 This approach helps pinpoint key factors driving financial success, providing insights into the elements that most impact a movie's performance.
 
+## Data Story
+The data story was made available with github pages and can be found [here](https://epfl-ada.github.io/ada-2024-project-awesometeam2024/).
+
 ## Research Questions
 
 The questions are organized as milestones to guide our analysis, helping us systematically examine the factors that contribute to high box office revenue for a successful project outcome.
