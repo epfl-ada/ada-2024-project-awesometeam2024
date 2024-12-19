@@ -34,6 +34,9 @@ The questions are organized as milestones to guide our analysis, helping us syst
 6. Evolution over time
     - How did **box office revenue** evolved over time? How was it for each **_genre_**?
     - How has **_runtime_** changed along the years and how it correlates with revenue?
+7. Sentimental analysis
+    - Are there specific schemes regarding the sentiment(s) present in the summary of success movies ? 
+    - Is the dominant balance of feelings of a plot summary influence its success ?
 
 **Output model** \
 Gathering answers from the previous questions, this helps us choose one model for predicting the film success (on box office revenue). Nevertheless, we still have to choose the best one.
@@ -78,6 +81,7 @@ Our ultimate goal is to predict the success (on box office revenue) of a movie b
         - Gender
         - Ethnicity
     - Evolution over time
+    - Sentimental analysis
 
 - **Data description** :
    - use confidence intervals to quantify uncertainty in our EDA
@@ -112,15 +116,27 @@ An important aspect of a data analysis project is to communicate the findings an
 #### Step 7 : Find areas of improvements
 We made choices during this analysis, either because of the time or because of what we thought was true at some point. The goal of this part is to come back on this choice in order to derive improvements on the current pipeline and model.
 
+#### Step 8 : Define and select the information that we want to convey in our data story along with the plots
+The extensive analysis allowed us to have a wide view of the context. In order to keep our data story the most interesting and complete, we have to choose which parts of the analysis are going to be included, in which order and with which plot.
+
+#### Step 9 : Set up the website with github pages and Write our data story
+The goal here is to step up the environnement to develop our data story the easiest way possible.
+
+#### Step 10 : Integrate the interactive plots
+This step is quite challenging since it requires the transposition of the initial matplotlib plots into nice dynamic plotly interactive plots.
+
+#### Step 11 : Improve the notebook organization, add the sentimental analysis and improve the readme
+The final step was the overall review of the content we have produced until now. Our goal is to organize well or work to maximize the information convey by our project. 
+
 ## Organization within the team
 
 We organize ourselves with one leader for each task/step of the project and all other teammates also contribute and review. Here is a summary of the organization :
 
-- **Nicolas** : Step 1 and 2 (Defining objectives and Data collection)
-- **Andrea** : Step 3 (Exploratory Data Analysis)
-- **Vasco** : Step 4 (Analysis of correlations between variables)
-- **Ahmed** : Step 5 (Define, apply and upgrade model for predictive analysis)
-- **Ines** : Step 6 and 7 (Communicate results and Find areas of improvements)
+- **Nicolas** : Step 1 and 2 (Defining objectives and Data collection) + Step 8 and 9 + sentimental analysis
+- **Andrea** : Step 3 (Exploratory Data Analysis) + Step 10 + organization within the team
+- **Vasco** : Step 4 (Analysis of correlations between variables) + Step 11
+- **Ahmed** : Step 5 (Define, apply and upgrade model for predictive analysis) + Step 10
+- **Ines** : Step 6 and 7 (Communicate results and Find areas of improvements) + Step 11
 
 For the data story we all contribute, increasing (and correcting potential mistakes) the work of the colleague who previously submitted.
 
