@@ -63,6 +63,6 @@ section {
 
 iframe {
     width: 100%; /* Make the iframe take up the full container width */
-    height: 100%; /* Make the iframe take up the full container height */
+    height: 700px; /* Make the iframe take up the full container height */
     border: none;
 }
