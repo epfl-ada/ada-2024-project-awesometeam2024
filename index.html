@@ -144,7 +144,7 @@
             <h3>Redefining the Spotlight</h3>
             <p>
                 Ethnic diversity is transforming the film industry. Movies with diverse casts are increasingly outperforming those with 
-                homogeneous ensembles. However, historical data shows a preference for predominantly white casts in the past (maybe ??). 
+                homogeneous ensembles. However, historical data shows a preference for predominantly white casts in the past. 
                 Today, this trend is shifting, reflecting the growing importance of inclusive storytelling.   
             </p>
             <div id="chart-container">
@@ -228,13 +228,70 @@
         <section id="formula-for-success">
             <h2>The Formula for Success: From Data to Blockbuster</h2>
             <p>
-                The different model why try to use to predict. What they were using and what results they gave.
+                Understanding how data shapes the outcome of a movie's success at the box office. Here's an exploration of the predictive models we used, their performance, and insights into their effectiveness.
             </p>
-            <div class="visual-placeholder">
-                <!-- Add your flowchart or decision tree here -->
+        
+            <!-- Section for model description -->
+            <div id="model-description">
+                <h3>Predictive Model Overview</h3>
+                <ul>
+                    <li><b>Logistic Regression:</b> Classifies movies as successes or failures.</li>
+                </ul>
+                <p>Our focus here is on analyzing the Logistic Regression model, as it provides both simplicity and interpretability for predicting box office success.</p>
+            </div>
+        
+            <!-- Analysis of Logistic Regression -->
+            <div id="log-reg-analysis">
+                <h3>Logistic Regression Model Analysis</h3>
+                <p>
+                    The Logistic Regression model was evaluated based on multiple performance metrics. Here are the key results and their implications:
+                </p>
+                <ul>
+                    <li>
+                        <b>Confusion Matrix:</b> The confusion matrix highlights the model's performance across four categories: True Positives, True Negatives, False Positives, and False Negatives. While the model correctly identifies many non-successes (True Negatives: 1230), it struggles with predicting successes (True Positives: 69). This indicates an imbalance in the data and a limitation in the model's feature set.
+                    </li>
+                    <li>
+                        <b>Precision-Recall Curve:</b> This curve visualizes the trade-off between precision and recall. As recall increases (capturing more successes), precision decreases (more false positives). This trade-off highlights the challenge of optimizing the model for both.
+                    </li>
+                    <li>
+                        <b>ROC Curve:</b> The ROC curve provides a measure of the model's discriminatory power, with an Area Under the Curve (AUC) of 0.81. This indicates that the model performs well. However, better feature engineering and additional data could enhance this performance.
+                    </li>
+                </ul>
+                <p>
+                    These results show the need for further refinement, including rebalancing the dataset, exploring additional features, especially the budget and marketing spend.
+                </p>
+            </div>
+        
+            <!-- Interactive Visualizations -->
+            <div id="interactive-visualizations">
+                <p>Explore the Logistic Regression model's performance through the following interactive visualizations:</p>
+        
+                <div class="chart-container">
+                    <h4>Confusion Matrix</h4>
+                    <iframe src="assets/ploty-img/confusion_matrix.html" width="100%" height="500" style="border:none;"></iframe>
+                    <p class="chart-description">
+                        Significant number of False Negatives comparing to True Positives.
+                    </p>
+                </div>
+        
+                <div class="chart-container">
+                    <h4>Precision-Recall Curve</h4>
+                    <iframe src="assets/ploty-img/precision_recall_curve.html" width="100%" height="500" style="border:none;"></iframe>
+                    <p class="chart-description">
+                        The precision-recall curve shows the trade-off between capturing more successes (recall) and reducing false positives (precision).
+                    </p>
+                </div>
+        
+                <div class="chart-container">
+                    <h4>Receiver Operating Characteristic (ROC) Curve</h4>
+                    <iframe src="assets/ploty-img/roc_curve.html" width="100%" height="500" style="border:none;"></iframe>
+                    <p class="chart-description">
+                        The ROC curve, with an AUC of 0.81, indicates good overall performance.
+                    </p>
+                </div>
             </div>
         </section>
-
+                
         <section id="epilogue">
             <h2>Epilogue</h2>
             <p>

@@ -1,5 +1,7 @@
 from sklearn.svm import SVC
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report, confusion_matrix
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, classification_report, confusion_matrix, roc_curve, auc
+import plotly.figure_factory as ff
+import plotly.graph_objects as go
 
 class SVMModel:
     def __init__(self, kernel='rbf', C=1.0, gamma='scale', threshold=0.5):
@@ -71,3 +73,71 @@ class SVMModel:
         print(classification_report(y_true, y_pred))
 
         return {"Accuracy": accuracy, "Precision": precision, "Recall": recall, "F1 Score": f1}
+    
+    def plot_confusion_matrix_plotly(self, y_true, X, file_name=None):
+        """
+        Generates an interactive confusion matrix using Plotly and optionally saves it as an HTML file.
+
+        Args:
+            y_true: True class labels.
+            X: Feature data for evaluation.
+            model: Trained model to predict on X.
+            file_name: (Optional) File name to save the HTML plot.
+        """
+        y_pred = self.predict(X)
+        cm = confusion_matrix(y_true, y_pred)
+
+        labels = ["Non-Success", "Success"]
+        z_text = [[str(val) for val in row] for row in cm]
+
+        fig = ff.create_annotated_heatmap(
+            z=cm,
+            x=labels,
+            y=labels,
+            annotation_text=z_text,
+            colorscale="Viridis"
+        )
+
+        fig.update_layout(
+            title_text="Confusion Matrix",
+            xaxis_title="Predicted",
+            yaxis_title="Actual",
+            margin=dict(t=50, l=50),
+            font=dict(size=12)
+        )
+
+        if file_name:
+            fig.write_html(file_name)
+        fig.show()
+
+
+    def plot_roc_curve_plotly(self, y_true, X, file_name=None):
+        """
+        Generates an interactive ROC curve using Plotly and optionally saves it as an HTML file.
+
+        Args:
+            y_true: True class labels.
+            X: Feature data for evaluation.
+            model: Trained model to predict probabilities on X.
+            file_name: (Optional) File name to save the HTML plot.
+        """
+        probabilities = self.model.predict_proba(X)[:, 1]
+        fpr, tpr, _ = roc_curve(y_true, probabilities)
+        roc_auc = auc(fpr, tpr)
+
+        fig = go.Figure()
+
+        fig.add_trace(go.Scatter(x=fpr, y=tpr, mode='lines', name=f'ROC Curve (AUC = {roc_auc:.2f})'))
+        fig.add_trace(go.Scatter(x=[0, 1], y=[0, 1], mode='lines', name='Random Guess', line=dict(dash='dash')))
+
+        fig.update_layout(
+            title="Receiver Operating Characteristic (ROC) Curve",
+            xaxis_title="False Positive Rate",
+            yaxis_title="True Positive Rate",
+            font=dict(size=12),
+            margin=dict(t=50, l=50)
+        )
+
+        if file_name:
+            fig.write_html(file_name)
+        fig.show()

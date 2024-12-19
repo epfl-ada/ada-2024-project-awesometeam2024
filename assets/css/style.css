@@ -1,69 +1,165 @@
 /* General Styles */
 body {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
     font-weight: 400;
-    line-height: 1.5;
+    line-height: 1.6;
     font-size: 1.125rem;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
-    color: #555;
+    color: #333; /* Softer, more modern text color */
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color:#444;
+    color: #222;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin:0 0 20px;
+    margin: 0 0 15px;
 }
 
 h1 {
-    font-size: 1em;
-    color:#f9f9f9;
+    font-size: 2.5rem;
+    color: #f9f9f9;
     font-weight: 700;
-    margin: 0%;
 }
 
 h2 {
-    font-size: 2.25em;
-    font-weight: 800;
-    line-height: 1.1;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 10px;
 }
 
 h3 {
-    font-size: 1.5em;
-    font-weight: 700;
-    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 15px;
 }
 
 header, footer {
-    padding: 20px;
+    padding: 20px 10px;
     background-color: #222;
     color: #f9f9f9;
-    justify-content: center;
+    text-align: center;
+}
+
+header {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    margin-top: 30px;
+    border-top: 2px solid #444;
 }
 
 main {
-    max-width: 800px;
-    margin: 20px auto;
+    max-width: 900px;
+    margin: 40px auto;
     padding: 0 20px;
 }
 
+/* Section Styles */
 section {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#chart-container {
+/* Interactive Visualization Section */
+#interactive-visualizations {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Chart Container Styling */
+.chart-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-top: 20px;
-    width: 90%; /* Adjust width as needed (90% of the viewport width) */
-    height: 80vh; /* Set height to 80% of the viewport height */
-    margin-left: auto; /* Center horizontally */
-    margin-right: auto;
 }
 
+/* Adjust iframe size for larger plots */
 iframe {
-    width: 100%; /* Make the iframe take up the full container width */
-    height: 100%; /* Make the iframe take up the full container height */
+    width: 100%; /* Ensure the iframe takes the full width of its container */
+    height: 700px; /* Increase height to show entire plot */
     border: none;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    main {
+        padding: 0 10px;
+    }
+
+    iframe {
+        height: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    iframe {
+        height: 500px;
+    }
+}
+
+/* Utility Classes */
+.center-text {
+    text-align: center;
+}
+
+.text-muted {
+    color: #777;
+}
+
+.text-highlight {
+    color: #007BFF;
+    font-weight: 600;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
 }
