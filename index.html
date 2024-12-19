@@ -49,10 +49,11 @@
             <p>
                 As we can imagine, the release date has a strong impact on the film's performance. First by plotting the data,
                 we discover that summer is the best period to release a movie. More specifically, in the month of June. This 
-                was confirmed when assessing the correlation between the release month and the revenue. A correlation of 0.072 suggests release season alone is not a strong predictor of revenue in our dataset.
+                was confirmed when assessing the correlation between the release month and the revenue. 
+                But keep in mind that the correlation is 0.072 which suggests release season alone is not a strong predictor of revenue in our dataset.
             </p>
             <p>
-                This can be linked with the fact that people are more likely to go to the cinema during the summer : 
+                This can be linked with the fact that people are more likely to go to the cinema during the summer, because the
                 kids are on holiday and parents are looking for activities to do with them.
             </p>
             <div id="chart-container">
@@ -96,11 +97,11 @@
                 again to stabillize around 105 minutes. 
             </p>
             <div id="chart-container">
-                <iframe src="assets/ploty-img/runtime_category.html"></iframe>
+                <iframe src="assets/ploty-img/runtime_trend.html"></iframe>
             </div>
             <p>
-                But what about the revenue? We analysed the average revenue for each runtime categories and found with confidence 
-                that movies considered as "long" compare to others tend to perform better than shorter movies.
+                But what about the revenue? Back in the days from 1920 to 1950
+                revenues from short and long movies were almost identical, but from 1950 to 2020, long movies have been performing a lot better.
             </p>
             <div id="chart-container">
                 <iframe src="assets/ploty-img/runtime_category_periods.html"></iframe>
@@ -113,20 +114,61 @@
         </section>
 
         <section id="location">
-            <h2>Exploring the Impact of a Movie's Location</h2>
+            <h2>Exploring the Impact of Diversity in Film</h2>
             <p>
-                The place where a movie's story happens is not just a background : it adds to the story and helps the audience connect. 
-                But how important is it really? In this part, we look at how the location of a movie might influence its success. 
-                We ask if some countries work better for audiences around the world and if this impacts how profitable the 
-                movie becomes.
+                The stories movies tell and the faces that bring them to life have a profound impact on how audiences connect with films. 
+                In this section, we examine how diversity—both in the location of a movie and the ethnic composition of its cast—plays a role 
+                in shaping box office success. From the settings where stories unfold to the inclusivity of the people who tell them, we 
+                investigate whether diversity drives profitability and resonates with global audiences.
             </p>
             <div id="chart-container">
-                <svg id="chart" width="600" height="400"></svg>
+                <img src="assets/images/locations.webp" alt="Chart representing movies in different locations" width="600" height="400">
             </div>
+            <h3>The Rise of Ethnic Diversity in Film Revenue</h3>
+            <p>
+                Ethnic diversity is transforming the film industry. Movies with diverse casts are increasingly outperforming those with 
+                homogeneous ensembles. Looking the graph below, you can see how lately the revenue of movies with many ethnicities increased exponentially. 
+                Back in the days the trend was to have not many ethnicities in the cast.
+                Today, this trend is shifting, reflecting the growing importance of inclusive storytelling.   
+            </p>
+            <div id="chart-container">
+                <iframe src="assets/ploty-img/revenue_ethnic_diversity_periods.html"></iframe>
+            </div>
+            <h3>Diversity as a Driver of Box Office Success</h3>
+            <p>
+                Looking closely at the data, you can see that ethnic diversity plays a key role in a movie's success.
+                In fact, we found that movies with a more diverse cast tend to perform better at the box office. 
+            </p>
+            <div id="chart-container">
+                <iframe src="assets/ploty-img/revenue_ethnic_diversity_average.html"></iframe>
+            </div>
+            <h3>The Dominance of White-Centered Narratives</h3>
+            <p>
+                But is that really it ?
+                By looking more closely, it seems that movies with a white cast (english, british and 
+                australian ethnicities) get higher revenues. This is not a surprise since the movie industry is mainly dominated by white people.
+            </p>
+        
+            <div id="chart-container">
+                <iframe src="assets/ploty-img/revenue_ethnicity_periods.html"></iframe>
+            </div>
+            <p>
+                So, does it matches with what you thought ?
+            </p>
         </section>
 
         <section id="actors">
-            <h2>Who Brings the Magic?</h2>
+            <h2>Faces That Fill Seats</h2>
+            <p>
+                Up to now, we putted aside one huge factor that makes people go to the theater and see a movie: their favorite actors.
+                As an actor, it is very important to have a personal approach when acting and to be able to connect with the audience. 
+                Building a persona that people like is key for people to come see you again. In the analysis below, we tried to see 
+                which faces of the past century have created the craze and led to a financial success.
+            </p>
+            <div id="chart-container">
+                <img src="assets/images/actors.webp" alt="Chart representing movies in different locations" width="600" height="400">
+            </div>
+
             <h3>The Youth Advantage vs Timeless Talent</h3>
             <div id="chart-container">
                 <iframe src="assets/ploty-img/actor_age_group_revenues.html"></iframe>
@@ -140,51 +182,37 @@
                 In the end, we are only analyzing the average, so it does not mean that a movie with a younger cast will always perform better.
                 It's a good place to remind you to be careful when analyzing data! 
             </p>
-            
-            <h3>Redefining the Spotlight</h3>
+
+            <h3>Actors' Gender</h3>
             <p>
-                Ethnic diversity is transforming the film industry. Movies with diverse casts are increasingly outperforming those with 
-                homogeneous ensembles. However, historical data shows a preference for predominantly white casts in the past. 
-                Today, this trend is shifting, reflecting the growing importance of inclusive storytelling.   
+                Gender representation in film has always been a critical topic of discussion. Now, we explore 
+                whether the gender distribution of actors in a film has any significant influence on its box office revenue. 
+                We ask: Does the proportion of male and female actors in the cast impact how much revenue the film generates?
+            </p>
+            <p>
+                To start, we analyzed the percentage of female characters in a movie and plotted it against the box office revenue. 
+                The graph below helps visualize whether movies with higher percentages of female characters perform better or worse financially.
             </p>
             <div id="chart-container">
-                <iframe src="assets/ploty-img/revenue_ethnic_diversity_periods.html"></iframe>
+                <iframe src="assets/ploty-img/gender_percentage_vs_revenue.html"></iframe>
             </div>
-            <h3>Stories in Every Shade</h3>
             <p>
-                Looking closely at the data, it was very surprising to see that ethnic diversity plays a key role in a movie's success.
-                In fact, we found that movies with a more diverse cast tend to perform better at the box office. 
+                Moving deeper, we investigate whether movies with predominantly male, predominantly female, or balanced casts have 
+                significantly different box office revenues. The graph below compares the average revenue for each category. 
+                This provides insights into whether gender balance or dominance correlates with financial success.
             </p>
             <div id="chart-container">
-                <iframe src="assets/ploty-img/revenue_ethnic_diversity_average.html"></iframe>
+                <iframe src="assets/ploty-img/gender_dominance_vs_revenue.html"></iframe>
             </div>
             <p>
-                But is that really it ?
-                By looking more closely, it seems that the past century favored movies with a white cast (english, british and 
-                australian ethnicities). But the trend is changing and we can see how it improved through the years.
-            </p>
-        
-            <div id="chart-container">
-                plot the evolution of number of different ethnicities by continent
-                <svg id="chart" width="600" height="400"></svg>
-            </div>
-            <p>
-                So, does it matches with what you thought ?
+                You can notice that movies with predominantly male casts tend to have nearly double the average box office revenue 
+                compared to movies with predominantly female casts or balanced casts. This reflects historical biases in the industry, where male actors 
+                often had larger roles and greater star power, leading to higher financial returns.
             </p>
 
-            <h3>Faces That Fill Seats</h3>
-            <p>
-                Up to now, we putted aside one huge factor that makes people go to the theater and see a movie: their favorite actors.
-                As an actor, it is very important to have a personal approach when acting and to be able to connect with the audience. 
-                Building a persona that people like is key for people to come see you again. In the analysis below, we tried to see 
-                which faces of the past century have created the craze and led to a financial success.
-            </p>
-            <div id="chart-container">
-                <svg id="chart" width="600" height="400"></svg>
-            </div>
         </section>
 
-        <section id="summary_analsys">
+        <section id="sentimental_analysis">
             <h2>Emotions Behind the Words</h2>
             <p>
                 Until now, we have been looking at explicit and quantitative data. Although looking at the numbers is important, it 
@@ -192,21 +220,53 @@
                 movie and for that, we performed a sentimental analysis on their summary.
             </p>
             <p>
-                The analysis have shown that ...
+                The analysis has shown that the sentiment scores of movie summaries can provide fascinating insights into the tone and emotional appeal of the stories. 
+                We categorized movies into different box office revenue groups and plotted the distributions of their sentiment scores.
+            </p>
+            <h3>VADER Sentiment Analysis</h3>
+            <p>
+                Using VADER, we analyzed the compound sentiment score, along with positive, negative, and neutral components for each movie summary. 
+                The graphs below illustrate how these scores are distributed across various box office revenue groups, offering insights into the emotional tone 
+                and how it might correlate with financial success.
             </p>
             <div id="chart-container">
-                <svg id="chart" width="600" height="400"></svg>
+                <iframe src="assets/ploty-img/vader_sentiment_distributions.html"></iframe>
             </div>
+            <h3>TextBlob Sentiment Analysis</h3>
+            <p>
+                With TextBlob, we further explored the sentiment of movie summaries by calculating polarity (positivity/negativity) and subjectivity (objectiveness/opinionatedness). 
+                The graphs below show how these scores are distributed for each box office revenue group, giving a deeper perspective on how sentiment differs 
+                between successful and less successful movies.
+            </p>
+            <div id="chart-container">
+                <iframe src="assets/ploty-img/textblob_sentiment_distributions.html"></iframe>
+            </div>
+            <p>
+                By combining these insights, we uncovered patterns that suggest the emotional tone of a movie summary could influence its appeal and 
+                ultimately its box office performance.
+            </p>
         </section>
+        
 
         <section id="relationships">
             <h2>Untangling Dependencies</h2>
-            <p><!-- Add your description here --></p>
-            <div class="visual-placeholder">
-                <!-- Add your network graph or other visual here -->
+            <p>
+                The movie industry is a complex ecosystem with many interdependencies. In this section, we explore the relationships between 
+                different factors that contribute to a movie's success. By analyzing the data, we aim to uncover hidden patterns and insights 
+                that can help us predict the box office revenue of a movie.
+            </p>
+            <p>
+                Taking the runtime and the genre as example, we have discovered that the average runtime per genre has evolved over the years.
+                This is a very interesting result since it shows that the "perfect" runtime is not the same for every movies : 
+                it can be influenced by its genre. Which seems pretty logical when you think about it : you would not expect a comedy to last
+                3 hours.
+            </p>
+            <div id="chart-container">
+                <iframe src="assets/ploty-img/runtime_genre.html"></iframe>
             </div>
         </section>
 
+        <!-- 
         <section id="outliers">
             <h2>When Movies Break the Mold</h2>
             <p>
@@ -221,9 +281,9 @@
             <h3>Movie 1</h3>
             <h3>Movie 2</h3>
             <div class="visual-placeholder">
-                <!-- Add your annotated scatterplot or other visual here -->
             </div>
         </section>
+        -->
 
         <section id="formula-for-success">
             <h2>The Formula for Success: From Data to Blockbuster</h2>

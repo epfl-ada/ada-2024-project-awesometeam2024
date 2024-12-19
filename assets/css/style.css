@@ -14,7 +14,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     color: #222;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin: 0 0 15px;
+    margin:0 0 10px;
 }
 
 h1 {
@@ -31,9 +31,9 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-top: 15px;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-top: 10px;
 }
 
 header, footer {
@@ -60,7 +60,7 @@ main {
 
 /* Section Styles */
 section {
-    margin-bottom: 40px;
+    margin-bottom: 5px;
     padding: 20px;
     background-color: #fff;
     border-radius: 10px;
@@ -84,6 +84,10 @@ section {
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 90%; /* Adjust width as needed (90% of the viewport width) */
+    height: 80vh; /* Set height to 80% of the viewport height */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto;
 }
 
 /* Adjust iframe size for larger plots */
