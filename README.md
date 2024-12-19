@@ -135,11 +135,11 @@ The final step was the overall review of the content we have produced until now.
 
 We organize ourselves with one leader for each task/step of the project and all other teammates also contribute and review. Here is a summary of the organization :
 
-- **Nicolas** : Step 1 and 2 (Defining objectives and Data collection) + Step 8 and 9 + sentimental analysis
-- **Andrea** : Step 3 (Exploratory Data Analysis) + Step 10 + organization within the team
-- **Vasco** : Step 4 (Analysis of correlations between variables) + Step 11
-- **Ahmed** : Step 5 (Define, apply and upgrade model for predictive analysis) + Step 10
-- **Ines** : Step 6 and 7 (Communicate results and Find areas of improvements) + Step 11
+- **Nicolas** : Step 1 and 2 + Step 8 and 9 + sentimental analysis
+- **Andrea** : Step 3 + Step 10 + organization within the team
+- **Vasco** : Step 4 + Step 11
+- **Ahmed** : Step 5 + Step 10
+- **Ines** : Step 6 and 7 + Step 11
 
 For the data story we all contribute, increasing (and correcting potential mistakes) the work of the colleague who previously submitted.
 
