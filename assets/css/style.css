@@ -53,7 +53,13 @@ section {
     padding: 20px;
 }
 
+/* Chart Container Styling */
 .chart-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     text-align: center;
     width: 90%; /* Adjust width as needed (90% of the viewport width) */
     height: 80vh; /* Set height to 80% of the viewport height */
@@ -61,8 +67,10 @@ section {
     margin-right: auto;
 }
 
+/* Adjust iframe size for larger plots */
 iframe {
-    width: 100%; /* Make the iframe take up the full container width */
-    height: 700px; /* Make the iframe take up the full container height */
+    width: 100%; /* Ensure the iframe takes the full width of its container */
+    height: 700px; /* Increase height to show entire plot */
     border: none;
+    border-radius: 6px;
 }
