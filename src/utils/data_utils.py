@@ -167,7 +167,8 @@ def create_ethnicity_list(data_str):
         .replace('afro', 'african')\
         .replace('afro-', 'african ')\
         .replace('south african', 'south_african')\
-        .replace('african-american', 'african american')
+        .replace('african-american', 'african american')\
+        .replace('jews', 'jewish')
     
     # Split the string into a list of ethnicity names
     return new.split()
