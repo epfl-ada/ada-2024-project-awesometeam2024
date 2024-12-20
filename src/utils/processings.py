@@ -40,7 +40,6 @@ def process_movie_metadata(df_movies):
     df_movies['languages'] = df_movies['languages'].apply(utils.convert_to_dict)
     df_movies['countries'] = df_movies['countries'].apply(utils.convert_to_dict)
 
-    df_movies['release_day'] = df_movies['release_date'].apply(utils.get_day)
     df_movies['release_month'] = df_movies['release_date'].apply(utils.get_month)
     df_movies['release_year'] = df_movies['release_date'].apply(utils.get_year)
     df_movies.drop(columns=['release_date'], inplace=True)

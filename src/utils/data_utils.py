@@ -218,3 +218,10 @@ def categorize_age_group(age):
 def get_textblob_sentiment(text):
     blob = TextBlob(text)
     return blob.sentiment
+
+def add_family(ethnicity):
+    if isinstance(ethnicity, list) and \
+        ('english' in ethnicity or 'irish' in ethnicity or 'scottish' in ethnicity) \
+            and 'british' not in ethnicity:
+        ethnicity.append('british')
+    return ethnicity
